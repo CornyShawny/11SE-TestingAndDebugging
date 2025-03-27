@@ -63,10 +63,12 @@ def system_test():
     """Test the system as a whole."""
     
     # Run through the entire process: adding, selling, checking availability
-    add_product('apple', 50)
-    add_product('banana', 30)
-    sell_product('apple', 10)
-    sell_product('banana', 5)
+    add_product('apple', 0)
+    add_product('banana', 0)
+    add_product('mango', 0)
+    sell_product('apple', 0)
+    sell_product('banana', 0)
+    sell_product('mango', 0)
 
     # Check final availability and inventory value
     apple_stock = check_availability('apple')
@@ -78,7 +80,9 @@ def system_test():
     print(f"Banana stock: {banana_stock} (Expected: 25)")  # 30 - 5
     print(f"Total inventory value: {inventory_value} (Expected: 70)")  # (40 * 1.0) + (25 * 0.5)
     
-    # TODO: Add tests for boundary conditions such as no stock or empty inventory.
+    # TODO: Add tests for boundary conditions such as no stock or empty inventory
+    
+    
     # For example, check if the inventory value is 0 when no products exist.
 
 # -------------------------------------------
@@ -89,8 +93,8 @@ if __name__ == "__main__":
     #print("Running Unit Test...")
     #unit_test()
 
-    print("\nRunning Integration Test...")
-    integration_test()
+    #print("\nRunning Integration Test...")
+    #integration_test()
 
-    # print("\nRunning System Test...")
-    # system_test()
+    print("\nRunning System Test...")
+    system_test()
